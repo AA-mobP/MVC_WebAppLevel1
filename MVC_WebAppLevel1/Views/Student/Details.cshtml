@@ -1,0 +1,31 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<div class="card mb-3" style="max-width: 540px;">
+    <div class="row g-0">
+        <div class="col-md-4">
+            <img src="/Images/@Model.Image" class="img-fluid rounded-start" alt="@Model.Image">
+        </div>
+        <div class="col-md-8">
+            <div class="card-body">
+                <h5 class="card-title">Student @Model.Id</h5>
+                <p class="card-text"><span class="text-info">Name:&nbsp;</span>@Model.Name</p>
+                <p class="card-text"><span class="text-info">Adress:&nbsp;</span>@Model.Address</p>
+                <p class="card-text"><span class="text-info">Gender:&nbsp;</span>@Model.Gender</p>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            @if (ViewBag.Previous != null)
+            {
+                <div class="col-6">
+                    <a class="btn btn-info" href="/Student/Details/@ViewBag.Previous">Back</a>
+                </div>}
+            <div class="col-6"><a class ="btn btn-info" href="/Student/Index">Main List</a></div>
+            @if (ViewBag.Next != null) {<div class="col-6"><a class="btn btn-info" href="/Student/Details/@ViewBag.Next">Next</a></div>}
+        </div>
+    </div>
+</div>

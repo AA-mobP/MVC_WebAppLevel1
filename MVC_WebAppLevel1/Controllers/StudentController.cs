@@ -14,8 +14,12 @@ namespace MVC_WebAppLevel1.Controllers
 
         public IActionResult Details(int id)
         {
-            Student? student = students.GetStudent(id);
-            return View("Deatils", student);
+            Student? student = students.GetStudent(id);//Current
+
+            ViewBag.Next = students.GetNext(id);//Next
+            ViewBag.Previous = students.GetPrevious(id);//Previous
+
+            return View("Details", student);
         }
     }
 }
